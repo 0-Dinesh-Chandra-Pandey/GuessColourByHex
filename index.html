@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="palette.png">
+    <title>Guess the color</title>
+  </head>
+  <body>
+    <!-- Startup window of the page -->
+    <div id="startup">
+      <!-- Form of the page -->
+      <form action="#">
+        <h1>Welcome! To our app</h1>
+        <input type="text" id="frmName" placeholder="Enter your name" autocomplete="off" autofocus="on">
+        <i class="fa-solid fa-user" style="color: #fff;"></i><br>
+        <input type="text" placeholder="Enter your favorite colour" autocomplete="off">
+        <i class="fa-solid fa-droplet" style="color: #fff;"></i><br>
+        <a id="frmBtn" onclick="hideStart()">Start</a>
+        <p>You have to guess the color with the given <b><i>HEX CODE.</i></b></p>
+      </form>
+    </div>
+    <div id="strtBack"></div>
+
+    <!-- END RESULT -->
+    
+    <div id="endRes">
+      <div class="bg"></div>
+        <div class="mainBx">
+          <div class="top">
+            <img src="Images/trophy.png" alt="" srcset="">
+          </div>
+          <div class="middle">
+            <h1>Thanks! For Playing our game</h1>
+            <span id="nameRes"></span>
+            <button id="playAgain" onclick="again()">Play Again !</button>
+          </div>
+          <div class="bottom">
+            <span>Created with love by : Dinesh <i class="fa-solid fa-heart" style="color: red;"></i></span>
+          </div>
+        </div>
+    </div>
+    
+
+    <!-- Code of the Game -->
+    <div class="centCont">
+      <!-- Main box -->
+      <div class="container">
+        <h1>Guess the color</h1>
+        <!-- QUESTION FOR THE USER -->
+        <section id="hex-place"></section>
+        <!-- ALERT BOX WHEN USER GIVE ANSWER -->
+        <section id="alert-box">
+          <div class="text">
+            <span id="label"></span>
+            <span class="hide" onclick="hide()">&#x2715;</span>
+          </div>
+        </section>
+
+        <!-- OPTION OF FOR THE USER -->
+          <section class="opt">
+          <div class="colors bx1" onclick="check(this.id)"></div>
+          <div class="colors bx2" onclick="check(this.id)"></div>
+          <div class="colors bx3" onclick="check(this.id)"></div>
+          <div class="colors bx4" onclick="check(this.id)"></div>
+        </section>
+
+        <!-- ATTEMPTS AND SCORE DISPLAY -->
+        <div class="lower-div">
+          <span>Attemps left: <span class="value" id="attempts">10</span></span>
+          <span>Score: <span class="value" id="score">0</span></span>
+        </div>
+      </div>
+    </div>
+    <!-- JavaScript code -->
+    <script src="script.js"></script>
+    <script src="other.js"></script>
+    <script src="https://kit.fontawesome.com/cab61bdb7d.js" crossorigin="anonymous"></script>
+  </body>
+</html>
